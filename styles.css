@@ -6,7 +6,7 @@
 
 body {
     background-color: #ecfaf8;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 }
 
 header {
@@ -41,9 +41,10 @@ li {
 
 .home {
     color: #222222;
+    text-decoration: none;
 }
 
-.quote-btn {  
+.nav__quote-btn {  
     margin-top: 1.5rem;
     height: 2rem;
     width: 8rem;
@@ -144,10 +145,10 @@ h4 {
     font-size: 1.5rem;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-}
-
-.product-card > p {
-    font-size: 1.2rem;
+    +p 
+    {
+        font-size: 1.2rem;
+    }
 }
 
 .collection-card {
@@ -193,8 +194,7 @@ footer {
     height: 35rem;
     margin-top: 6em;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .footer__card {
@@ -217,8 +217,6 @@ form {
     width: 28em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
     padding: 1.2em; 
 }
 
@@ -242,7 +240,7 @@ input, textarea {
     border-radius: 2px;
 }
 
-.btn--submit {
+.footer__card__btn {
     width: 26rem;
     height: 3rem;
     background-color: #568a83;
@@ -250,7 +248,7 @@ input, textarea {
 }
 
 /*TRANSITION*/
-.btn--submit:hover {
+.footer__card__btn:hover {
     height: 6em;
 }
 
@@ -267,7 +265,11 @@ input, textarea {
 
 @media screen and (max-width: 1024px) {
 
-    ul, .quote-btn {
+    body {
+        max-width: 100vw;
+    }
+
+    ul, br, .nav__quote-btn {
         display: none;
     }
 
@@ -283,10 +285,9 @@ input, textarea {
 
     h1 {
         font-size: 2.5rem;
-    }
-
-    .hero > p {
-        width: 22rem;
+        +p {
+            margin: 1rem;
+        }
     }
 
     .wrapper {
@@ -308,35 +309,24 @@ input, textarea {
         animation-timing-function: ease-in-out;
     }
 
-/* ANIMATION on collection card button */
+    .footer__card {
+        margin: auto;
+    }
+
+/* ANIMATION on collection card button in tablet and mobile view*/
     @keyframes grey-to-green {
         from {background-color: #343332;}
         to {background-color: #03635e;}
-    }   
-
-    footer {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-    
-      .footer__card {
-        margin: auto;
-      }
+    }      
 }
 
 /*MEDIA QUERY for mobiles*/
 
 @media screen and (max-width: 600px) {
 
-    body {
+    /*body {
         max-width: 100vw;
-    }
-
-    br {
-        display: none;
-    }
+    }*/
 
     h5 {
         font-size: 1.5rem; 
@@ -344,11 +334,6 @@ input, textarea {
 
     .footer__card {
         max-width: 95%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        
     }
 
     form, label, input, textarea {
@@ -360,5 +345,3 @@ input, textarea {
         margin-bottom: 0.2rem;
     }
 }
-
-/* try to align labels left in mobile view!*/
